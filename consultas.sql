@@ -138,3 +138,23 @@ SELECT
 FROM `movie-analysis-492416.test.imdb`
 WHERE Series_Title = 'Das Cabinet des Dr. Caligari';
 
+-- dados faltantes
+SELECT 
+  Meta_score,
+  Series_Title AS Filme,
+FROM `movie-analysis-492416.test.imdb`
+WHERE Meta_score IS null;
+
+SELECT 
+  COUNT(*) AS Total,
+FROM `movie-analysis-492416.test.imdb`
+WHERE Meta_score IS null;
+
+SELECT 
+  COUNT(*) AS Total,
+FROM `movie-analysis-492416.test.imdb`
+WHERE No_of_Votes IS null;
+
+SELECT COUNT(*) AS Total,
+FROM `movie-analysis-492416.test.imdb`
+WHERE Series_Title IS NULL OR Series_Title = '';
